@@ -27,16 +27,18 @@ jobs:
           distribution: 'adopt'
       - name: Bar File Creation
         run: $BAR_CREATION -data /root -b $BAR_STORE/Rest_Api_Application_Put_Get.bar -a Rest_Api_Application_Put_Get
-      - uses: actions/checkout@v2
-      - name: SonarQube_Scan
-        uses: kitabisa/sonarqube-action@master
-        with:
-          host: ${{ secrets.SONARQUBE_HOST }}											
-          login: ${{ secrets.SONARQUBE_TOKEN }}       
-          projectBaseDir: "Rest_Api_Application_Put_Get"
-          projectKey: "GWFA"
-          projectName: "GWFA"
-          projectVersion: "v0.0.1"
+        
+#      - uses: actions/checkout@v2
+#      - name: SonarQube_Scan
+#        uses: kitabisa/sonarqube-action@master
+#        with:
+#          host: ${{ secrets.SONARQUBE_HOST }}											
+#          login: ${{ secrets.SONARQUBE_TOKEN }}       
+#          projectBaseDir: "Rest_Api_Application_Put_Get"
+#          projectKey: "GWFA"
+#          projectName: "GWFA"
+#          projectVersion: "v0.0.1"
+
       - name: Publishing_Artifacts
         run:  curl -v -u$NEXUS_USERNAME:$NEXUS_PASSWORD --upload-file Rest_Api_Application_Put_Get.bar  $NEXUS_REPOSITORY_URL     
       
