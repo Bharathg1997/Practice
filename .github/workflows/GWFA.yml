@@ -13,7 +13,8 @@ env:
  NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
  NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }} 
  NEXUS_REPOSITORY_URL: ${{ secrets.NEXUS_REPOSITORY_URL }}
-
+ SONARQUBE_HOST: ${{ secrets.SONARQUBE_HOST }}											
+ SONARQUBE_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
  
 jobs:
   build:
