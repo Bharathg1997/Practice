@@ -27,6 +27,7 @@ jobs:
           distribution: 'adopt'
       - name: Bar File Creation
         run: $BAR_CREATION -data /root -b $BAR_STORE/Rest_Api_Application_Put_Get.bar -a Rest_Api_Application_Put_Get
+      - uses: actions/checkout@v2
       - name: SonarQube_Scan
         uses: kitabisa/sonarqube-action@master
         with:
